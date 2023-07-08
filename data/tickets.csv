@@ -1,5 +1,6 @@
 Symbol,Name,Exchange
-AAPL,Apple Inc.,NASDAQ
+^GSPC,sp500,sp500
+^AAPL,Apple Inc.,NASDAQ
 GOOGL,Alphabet Inc.,NASDAQ
 MSFT,Microsoft Corporation,NASDAQ
 AMZN,Amazon.com Inc.,NASDAQ

@@ -8,9 +8,10 @@ from sklearn.metrics import precision_score
 
 symbols=sys.argv[1:]
 for symbol in symbols:
-    path="./data/{}.csv".format(symbol)
+    print(symbol[1:])
+    path="./data/{}.csv".format(symbol[1:])
     if os.path.exists(path):
-        ticket = pd.read_csv(path, index_col=0)
+        ticket = pd.read_csv(f"{path}", index_col=0)
 
     else:
         ticket = yf.Ticker(f"{symbol}")
@@ -29,6 +30,9 @@ for symbol in symbols:
     ticket["Target"] = (ticket["next"] > ticket["Close"]).astype(int)
 
     ticket = ticket.loc["1990-01-01":].copy()
+    print
+    ticket.dropna(inplace=True)
+    print(ticket.shape)
 
 
     # ticket.plot.line(y="Close", use_index=True)
