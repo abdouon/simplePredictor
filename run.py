@@ -109,7 +109,9 @@ for symbol in symbols:
 
 
     predictions["Predictions"].value_counts()
-    precision_score(predictions["Target"], predictions["Predictions"])
+    print("----------------")
+    print(precision_score(predictions["Target"], predictions["Predictions"]))
+    print("----------------")
     predictions["Target"].value_counts() / predictions.shape[0]
 
 # predictions
