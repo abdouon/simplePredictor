@@ -72,7 +72,10 @@ for symbol in symbols:
 
     predictions = backtest(ticket, model, predictors)
     predictions["Predictions"].value_counts()
-    precision_score(predictions["Target"], predictions["Predictions"])
+    print('--------------------------------')
+    print(precision_score(predictions["Target"], predictions["Predictions"]))
+    print('--------------------------------')
+
     predictions["Target"].value_counts() / predictions.shape[0]
     horizons = [2,5,60,250,1000]
     new_predictors = []
