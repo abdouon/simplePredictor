@@ -93,10 +93,10 @@ for symbol in symbols:
 
     ticket = ticket.dropna(subset=ticket.columns[ticket.columns != "next"])
 
-    model2 = RandomForestClassifier(n_estimators=200, min_samples_split=50, random_state=1)
+    model = RandomForestClassifier(n_estimators=200, min_samples_split=50, random_state=1)
 
 
-    def predict2(train, test, predictors, model):
+    def predict(train, test, predictors, model):
         model.fit(train[predictors], train["Target"])
         preds = model.predict_proba(test[predictors])[:,1]
         preds[preds >=.6] = 1
